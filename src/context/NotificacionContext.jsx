@@ -4,7 +4,7 @@ import { Toast, ToastContainer } from "react-bootstrap";
 const NotificationContext = createContext();
 
 export const NotificationProvider = ({ children }) => {
-  const [toastConfig, setToastConfig] = useState(null); 
+  const [toastConfig, setToastConfig] = useState(null);
 
   const showToast = (config) => {
     if (!config || !config.message) return;
@@ -29,7 +29,16 @@ export const NotificationProvider = ({ children }) => {
       {children}
 
       {toastConfig && (
-        <ToastContainer position="top-end" className="p-3">
+        <ToastContainer
+          position="top-end"
+          className="p-3"
+          style={{
+            position: "fixed",
+            top: "1rem",
+            right: "1rem",
+            zIndex: 2000,
+          }}
+        >
           <Toast
             onClose={hideToast}
             show={toastConfig.show}
