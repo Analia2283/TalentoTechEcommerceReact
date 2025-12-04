@@ -1,0 +1,82 @@
+.wrapper {
+  min-height: 100vh;
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid #000;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rule {
+  border: none;
+  height: 1px;
+  background: #000;
+  margin: 1rem 0 1.25rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #000;
+  background: #fff;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.button {
+  flex: 1;
+  margin-right: 0.5rem;
+  padding: 0.75rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.buttonOutline {
+  flex: 1;
+  margin-left: 0.5rem;
+  padding: 0.75rem;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.note {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: #666;
+  text-align: left;
+}

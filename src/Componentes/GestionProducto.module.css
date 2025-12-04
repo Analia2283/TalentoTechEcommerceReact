@@ -1,0 +1,111 @@
+/* Contenedor principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: var(--bg-color, #f9f9f9); 
+  min-height: 100vh;
+}
+
+/* Panel */
+.panel {
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+
+/* Cabecera */
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.cabecera h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Botón agregar */
+.botonAgregar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #111;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.botonAgregar:hover {
+  background: #333;
+}
+
+.botonAgregar p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Lista de productos */
+.productoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.productoItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.imagen {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.productoItem h3 {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.productoItem p {
+  margin: 0 1rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Botones de acción */
+.boton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.boton:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+
+
