@@ -52,7 +52,7 @@ npm run dev
 
 ## Deploy
 
-- [Link]()
+- [Link](https://talento-tech-ecommerce-react.vercel.app/)
 
 
 
