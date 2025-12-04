@@ -3,7 +3,7 @@
 ## Descripción del proyecto. Venta de productos, comprende las siguientes tecnologías.
 
 - React
-- Firebase
+
 
 ### Funcionalidades Principales
 
