@@ -5,6 +5,7 @@ import { TbNut } from "react-icons/tb";
 import { useAuthContext } from "../context/AuthContext";
 import { useCartContext } from "../context/CartContext";
 import BarraDeBusqueda from "./BarraDeBusqueda";
+import "./Nav.module.css";
 const NavBarra = () => {
   const { usuario, cerrarSesion, isAuthenticated } = useAuthContext();
   const { carrito } = useCartContext();
@@ -12,7 +13,7 @@ const NavBarra = () => {
   const esAdmin = isAuthenticated && usuario.nombre === "admin";
 
   return (
-    <Navbar expand="lg" className="bg-white border-bottom border-light py-3">
+    <Navbar expand="lg" className="bg-white border-bottom border-light py-3 navbar-mobile-fixed">
       <Container fluid className="px-5">
         <Navbar.Brand
           as={Link}
