@@ -3,6 +3,7 @@ import { useProductContext } from "../context/ProductoContexto";
 import { useState, useEffect } from "react";
 import { useCartContext } from "../context/CartContext";
 import { Container, Row, Col, Pagination } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 import TarjetaProducto from "./TarjetaProducto";
 import Loader from "./Loader/Loader";
 
@@ -19,7 +20,7 @@ const Productos = () => {
     let listaAFiltrar = productos;
     if (categoriaId) {
       listaAFiltrar = productos.filter(
-        (producto) => producto.categoria === categoriaId
+        (producto) => producto.categoria === categoriaId,
       );
     }
 
@@ -42,11 +43,11 @@ const Productos = () => {
   const indicePrimerProducto = indiceUltimoProducto - productosPorPagina;
   const productosActuales = productosFiltrados.slice(
     indicePrimerProducto,
-    indiceUltimoProducto
+    indiceUltimoProducto,
   );
 
   const totalPaginas = Math.ceil(
-    productosFiltrados.length / productosPorPagina
+    productosFiltrados.length / productosPorPagina,
   );
   const cambiarPagina = (numeroPagina) => setPaginaActual(numeroPagina);
 
@@ -58,10 +59,9 @@ const Productos = () => {
           key={numero}
           active={numero === paginaActual}
           onClick={() => cambiarPagina(numero)}
-          
         >
           {numero}
-        </Pagination.Item>
+        </Pagination.Item>,
       );
     }
     return items;
@@ -69,6 +69,19 @@ const Productos = () => {
 
   return (
     <Container className="my-5">
+      {/* 2. Configuración de Helmet */}
+      <Helmet>
+        <title>
+          {categoriaId
+            ? `${categoriaId.toUpperCase()} | Arena Sport`
+            : "Catálogo de Productos | Arena Sport"}
+        </title>
+        <meta
+          name="description, Explora el catálogo indumentaria deportiva. Calzados, accesorios y mas para todo los deportes ."
+          content={`Explora nuestra sección de ${categoriaId || "indumentaria deportiva"}. Los mejores precios en Arena Sport.`}
+        />
+        <meta property="og:title" content="Arena Sport - Tienda Online" />
+      </Helmet>
       <h4>
         {categoriaId
           ? `Productos en: ${categoriaId.toUpperCase()}`
@@ -88,13 +101,11 @@ const Productos = () => {
             <Pagination.Prev
               onClick={() => cambiarPagina(paginaActual - 1)}
               disabled={paginaActual === 1}
-              
             />
             {obtenerItemsPaginacion()}
             <Pagination.Next
               onClick={() => cambiarPagina(paginaActual + 1)}
               disabled={paginaActual === totalPaginas}
-              
             />
           </Pagination>
         </div>

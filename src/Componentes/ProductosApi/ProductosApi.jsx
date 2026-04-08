@@ -1,5 +1,7 @@
 import "./ProductosApi.css";
 import TarjetaProducto from "../TarjetaProducto";
+
+
 const ProductosApi = ({ productos, agregarCarrito, detalleProducto }) => {
   return (
     <div className="productos-container">
@@ -11,8 +13,6 @@ const ProductosApi = ({ productos, agregarCarrito, detalleProducto }) => {
             product={prod}
             agregarCarrito={agregarCarrito}
             detalleProducto={detalleProducto}
-            
-
           />
         ))}
       </div>

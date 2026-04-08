@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import ControlesCarrito from "./ControlesCarrito";
 import { useCartContext } from "../context/CartContext";
 import { Card, Button } from "react-bootstrap";
@@ -68,6 +69,19 @@ const DetalleProducto = () => {
 
   return (
     <>
+    {/* 2. Helmet Dinámico según el producto cargado */}
+      <Helmet>
+        <title>{`${producto.nombre} | Mi Tienda Deportiva`}</title>
+        <meta name="description" content={producto.descripcion} />
+        
+        {/* Open Graph para redes sociales */}
+        <meta property="og:title" content={producto.nombre} />
+        <meta property="og:description" content={producto.descripcion} />
+        <meta property="og:image" content={producto.imagen} />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:type" content="product" />
+      </Helmet>
+
       <div className="d-flex justify-content-center mt-4 mb-4">
         <Card style={{ width: "25rem" }}>
           <Card.Img

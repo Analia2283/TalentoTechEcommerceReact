@@ -4,6 +4,7 @@ import { useCartContext } from "../context/CartContext";
 import { Card, Button } from "react-bootstrap";
 
 
+
 const TarjetaProducto = ({ product }) => {
   const {
     getCantidadProducto,
@@ -17,6 +18,8 @@ const TarjetaProducto = ({ product }) => {
   const cantidad = getCantidadProducto(product.id);
 
   return (
+    <>
+    
     <Card className="h-100 shadow-sm">
       <Link
         to={`/producto/${product.id}`}
@@ -63,6 +66,7 @@ const TarjetaProducto = ({ product }) => {
         )}
       </Card.Body>
     </Card>
+    </>
   );
 };
 

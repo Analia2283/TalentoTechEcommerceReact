@@ -4,6 +4,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [usuario, setUsuario] = useState(null);
+  const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
@@ -15,16 +16,18 @@ export const AuthProvider = ({ children }) => {
         email: emailGuardado || "",
       });
     }
+    setCargando(false);
   }, []);
 
-  const iniciarSesion = (username) => {
+  const iniciarSesion = (username, emailIngresado) => {
     const token = `fake-token-${username}`;
     localStorage.setItem("authToken", token);
+    localStorage.setItem("authEmail", emailIngresado);
 
-    const emailGuardado = localStorage.getItem("authEmail");
+    
     setUsuario({
       nombre: username,
-      email: emailGuardado || "",
+      email: emailIngresado || "",
     });
   };
 
@@ -39,6 +42,8 @@ export const AuthProvider = ({ children }) => {
     iniciarSesion,
     cerrarSesion,
     isAuthenticated: !!usuario,
+    esAdmin: usuario?.nombre === "admin",
+    cargando,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

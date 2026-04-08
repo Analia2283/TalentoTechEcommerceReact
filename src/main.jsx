@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { HelmetProvider } from 'react-helmet-async';
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
+      <HelmetProvider>
       <App />
+    </HelmetProvider>
     </Router>
   </StrictMode>
 );
